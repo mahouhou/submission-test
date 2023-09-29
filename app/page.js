@@ -1,95 +1,63 @@
-import Image from 'next/image'
+"use client"
+
 import styles from './page.module.css'
+
+function Form() {
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    //access form element from the event object
+    //construct FormData object with form element
+    //store form data in formData object
+    const form = e.target
+    const formData = new FormData(form)
+
+    //reformat data to improve readability
+    const formObject = {}
+    formData.forEach((value, key) => {
+      formObject[key] = value
+    })
+
+    //log to console (or send to server)
+    console.log(formObject)
+
+    //redirect to thank you page
+    window.location.href="/thankyou"
+  }
+
+  return (
+    <>
+    <h1>Project Submission Form</h1>
+    <p>Fill out the form below to submit your project. Fields marked with an asterisk * are required.</p>
+    <form onSubmit={handleSubmit}>
+      <label htmlFor="fname">First name: *</label>
+      <input type="text" id="fname" name="fname" required aria-required="true"/>
+
+      <label htmlFor="lname">Last name: *</label>
+      <input type="text" id="lname" name="lname" required aria-required="true"/>
+
+      <label htmlFor="email">Email: *</label>
+      <input type="email" id="email" name="email" required aria-required="true"/>
+
+      <label htmlFor="project">Link your project: *</label>
+      <input type="url" id="project" name="project" placeholder="https://" required aria-required="true"/>
+
+      <label htmlFor="description">Describe your project: *</label>
+      <textarea id="description" name="description" required aria-required="true"/>
+
+      <label htmlFor="permission">Can we share your project on social media?</label>
+      <input type="checkbox" id="permission" name="permission" />
+
+      <button type="submit" value="Submit" id="submit">Submit</button>
+    </form>
+    </>
+  )
+}
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      <Form />
     </main>
   )
 }
