@@ -12,6 +12,7 @@ export default function Textarea({ errors, register, label }) {
           minLength: ErrorMessages.minLength2,
           maxLength: ErrorMessages.maxLength1000,
         })}
+        className={errors.textarea && "input-error"}
       />
       <InputError errors={errors} fieldName="textarea" />
     </>

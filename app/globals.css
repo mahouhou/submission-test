@@ -1,14 +1,17 @@
 :root {
   --black: rgb(0, 28, 18);
   --white: white;
-  --pale-green: rgb(221, 255, 243);
-  --green: rgb(0, 255, 166);
+  --blue: rgb(39, 39, 230);
+  --dark-blue: rgb(18, 18, 151);
+  --grey: rgb(117, 117, 121);
 
   --transition-timing: 0.3s;
 }
 
 body {
-  background-color: var(--pale-green);
+  background-color: var(--white);
+  line-height: 1.5;
+  padding: 1rem 1rem 2rem 1rem;
 }
 
 form {
@@ -21,19 +24,24 @@ input, label, textarea, button {
   box-sizing: border-box;
 }
 
+input, textarea, button {
+  font-size: 1rem;
+}
+
 input[type="checkbox"],
 label[for="permission"] {
   display: inline-block;
   width: auto;
 }
 
-label, button[type="submit"] {
-  margin-top: 2rem;
-}
-
 label {
+  margin-bottom: 0.5rem;
   font-size: 0.9rem;
   font-weight: bold;
+}
+
+label, button[type="submit"] {
+  margin-top: 2rem;
 }
 
 input, textarea {
@@ -44,25 +52,47 @@ input, textarea {
 
 input:focus, textarea:focus {
   outline: none;
-  background-color: var(--white);
+  border-bottom-color: var(--blue);
 }
 
-input, textarea, button {
-  font-size: 1rem;
+::placeholder {
+  color: var(--grey);
+}
+
+.error {
+  color: rgb(213, 0, 0);
+  font-size: 0.8rem;
+}
+
+.input-error {
+  border-bottom-color: rgb(213, 0, 0);
 }
 
 button {
-  padding: 0.25rem;
-  background-color: var(--black);
+  height: 44px;
+  padding: 0 1.5rem;
+  background-color: var(--blue);
   color: var(--white);
   border: none;
-  border-radius: 1rem;
+  border-radius: 2em;
   text-transform: uppercase;
   font-weight: bold;
   transition: all var(--transition-timing);
+  cursor: pointer;
 }
 
 button:hover {
-  background-color: var(--white);
-  color: var(--black);
+  background-color: var(--dark-blue);
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 1.1;
+  color: var(--blue);
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
 }

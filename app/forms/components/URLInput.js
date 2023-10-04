@@ -9,6 +9,7 @@ export default function URLInput({ errors, register, label }) {
           type="url"
           {...register("url", { required: ErrorMessages.requiredMessage })}
           placeholder="https://"
+          className={errors.url && "input-error"}
         />
       <InputError errors={errors} fieldName="url" />
     </>

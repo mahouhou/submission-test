@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
+import styles from "./project-form.module.css";
 
 import NameInput from "../components/NameInput";
 import EmailInput from "../components/EmailInput";
@@ -34,13 +35,13 @@ export default function Form() {
     console.log(formObject);
 
     //redirect to thank you page
-    // router.push("/thankyou");
+    router.push("/thankyou");
   };
 
   return (
     <>
       <h1>Project Submission Form</h1>
-      <p>
+      <p className={styles.p}>
         Fill out the form below to submit your project. Fields marked with an
         asterisk * are required.
       </p>

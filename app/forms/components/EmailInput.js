@@ -8,6 +8,7 @@ export default function EmailInput({ errors, register }) {
       <input
         type="email"
         {...register("email", { required: ErrorMessages.requiredMessage })}
+        className={errors.email && "input-error"}
       />
       <InputError errors={errors} fieldName="email" />
     </>
