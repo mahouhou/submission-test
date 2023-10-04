@@ -1,36 +1,14 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+#Form, Input and Errors
 
-## Getting Started
+##A technical test by SuperHi
 
-First, run the development server:
+Online education platform SuperHi kindly shared their [Front-end Engineer Test](https://superhi.notion.site/superhi/Front-end-Engineer-Test-Public-95677e57d07a4c11a2d2d6166bc83717) with me, which I completed and shared here. View it live on [Vercel](https://submission-test.vercel.app/).
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+The brief was essentially to create a form with some validation that redirects to a success page upon submission.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+By completing this project, I learned about:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+* the react-hooks-form library and `useForm()` hook
+* hosting with Vercel
+* NextJS' `useRouter()` hook
+* NextJS' font optimisation feature
